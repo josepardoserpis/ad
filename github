@@ -1,0 +1,14 @@
+
+github
+	Usuario: josepardoserpis	
+	correo: joseantoniopardoanaya@gmail.com
+	pass: xxxxxxxx
+
+Crear repositorio
+	nombre: ad
+	inicializar con README 
+	.gitignore: visual studio (por c#)
+	https://github.com/josepardoserpis/ad.git
+
+clonar home:
+	git clone https://github.com/josepardoserpis/ad.git
