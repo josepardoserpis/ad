@@ -1,21 +1,33 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
-using System.Data;
 
-namespace Carticulo
+namespace CConsola
 {
     class MainClass
     {
-
         public static void Main(string[] args){
 
-            Console.WriteLine("Accediendo a dbprueba");
+            int entero = readInteger("Introduce un entero: ");
+            Console.WriteLine("entero={0}", entero);
+            int opcion = readOption("Elige opción [012]: ", "012");
 
-            IDbConnection dbConnection = new MySqlConnection("server=localhost;database=dbprueba;user=root;password=sistemas;ssl-mode=none");
+        }
+        public static int readInteger(string label) {
+            Console.Write(label);
+            String linea = Console.ReadLine();
+            try {
+                return Int32.Parse(linea);
+            }catch{
+                Console.WriteLine("Formato invalido. Vuelve a introducir. ");
+            }
 
-            dbConnection.Open();
+        }
+
+        public static int readOption(string label, string options){
+            while (true){
 
 
+
+            }
 
         }
     }

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace CConsola.Properties
 
-{
+
+namespace CConsola {
     public class Menu
     {
         private bool exit = false;
@@ -34,14 +34,19 @@ namespace CConsola.Properties
             return this;
         }
 
-        public void loop() {
+        public void Loop() {
             while (!exit) {
-                foreach(string label in labels)
-                    Console.WriteLine(label)
+                foreach (string label in labels)
+                    Console.WriteLine(label);
 
                 string option = Console.ReadLine();
-                if (actions.ContainsKey(option))
-               
+                if (actions.ContainsKey(option)) {
+                    actions[option]();
+                }
+                else {
+                    Console.WriteLine("Opción inválida. Vuelve a introducir");
+                }
+
             }
 
         }
