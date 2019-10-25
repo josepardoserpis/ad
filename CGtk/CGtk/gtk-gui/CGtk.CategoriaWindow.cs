@@ -14,9 +14,9 @@ namespace CGtk
 
 		private global::Gtk.HButtonBox hbuttonbox1;
 
-		private global::Gtk.Button button1;
+		private global::Gtk.Button buttonOk;
 
-		private global::Gtk.Button button2;
+		private global::Gtk.Button buttonCancel;
 
 		protected virtual void Build()
 		{
@@ -63,25 +63,25 @@ namespace CGtk
 			this.hbuttonbox1.Name = "hbuttonbox1";
 			this.hbuttonbox1.LayoutStyle = ((global::Gtk.ButtonBoxStyle)(4));
 			// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
-			this.button1 = new global::Gtk.Button();
-			this.button1.CanFocus = true;
-			this.button1.Name = "button1";
-			this.button1.UseStock = true;
-			this.button1.UseUnderline = true;
-			this.button1.Label = "gtk-ok";
-			this.hbuttonbox1.Add(this.button1);
-			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1[this.button1]));
+			this.buttonOk = new global::Gtk.Button();
+			this.buttonOk.CanFocus = true;
+			this.buttonOk.Name = "buttonOk";
+			this.buttonOk.UseStock = true;
+			this.buttonOk.UseUnderline = true;
+			this.buttonOk.Label = "gtk-ok";
+			this.hbuttonbox1.Add(this.buttonOk);
+			global::Gtk.ButtonBox.ButtonBoxChild w4 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1[this.buttonOk]));
 			w4.Expand = false;
 			w4.Fill = false;
 			// Container child hbuttonbox1.Gtk.ButtonBox+ButtonBoxChild
-			this.button2 = new global::Gtk.Button();
-			this.button2.CanFocus = true;
-			this.button2.Name = "button2";
-			this.button2.UseStock = true;
-			this.button2.UseUnderline = true;
-			this.button2.Label = "Cancelar";
-			this.hbuttonbox1.Add(this.button2);
-			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1[this.button2]));
+			this.buttonCancel = new global::Gtk.Button();
+			this.buttonCancel.CanFocus = true;
+			this.buttonCancel.Name = "buttonCancel";
+			this.buttonCancel.UseStock = true;
+			this.buttonCancel.UseUnderline = true;
+			this.buttonCancel.Label = "Cancelar";
+			this.hbuttonbox1.Add(this.buttonCancel);
+			global::Gtk.ButtonBox.ButtonBoxChild w5 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox1[this.buttonCancel]));
 			w5.Position = 1;
 			w5.Expand = false;
 			w5.Fill = false;
@@ -96,7 +96,7 @@ namespace CGtk
 				this.Child.ShowAll();
 			}
 			this.DefaultWidth = 400;
-			this.DefaultHeight = 300;
+			this.DefaultHeight = 75;
 			this.Show();
 		}
 	}

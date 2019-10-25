@@ -3,8 +3,8 @@ using Gtk;
 
 namespace CGtk
 {
-    class MainClass
-    {
+    class MainClass {
+
         public static void Main(string[] args) {
             Application.Init();
             MainWindow win = new MainWindow();

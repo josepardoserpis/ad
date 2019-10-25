@@ -6,12 +6,12 @@ namespace CConsola
     {
         public static void Main(string[] args){
 
-            int entero = readInteger("Introduce un entero: ");
+            int entero = ReadInteger("Introduce un entero: ");
             Console.WriteLine("entero={0}", entero);
             int opcion = readOption("Elige opción [012]: ", "012");
 
         }
-        public static int readInteger(string label) {
+        public static int ReadInteger(string label) {
             Console.Write(label);
             String linea = Console.ReadLine();
             try {
@@ -19,6 +19,7 @@ namespace CConsola
             }catch{
                 Console.WriteLine("Formato invalido. Vuelve a introducir. ");
             }
+
 
         }
 
