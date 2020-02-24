@@ -31,9 +31,13 @@ public class PedidoDAO {
 		entityManager.close();
 		entityManagerFactory.close();
 		
+	}
+	
+	public static void ListarPedido (EntityManager entityManager) {
 		
-		
-		
+	}
+	
+	public static void EliminarPedido (EntityManager entityManager) {
 		
 	}
 

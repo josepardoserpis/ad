@@ -15,33 +15,118 @@ public class MenuPrincipal {
 		
 		System.out.println("Escoge una opción: ");
 		
-		System.out.println("1-Pedidos");
-		System.out.println("2-Clientes");
-		System.out.println("3-Articulos");
+		System.out.println("1-Insertar");
+		System.out.println("2-Listar");
+		System.out.println("3-Eliminar");
 		
 		Scanner teclado = new Scanner(System.in);
-		
 		int opcion= teclado.nextInt();
+		
 		
 		switch (opcion) {
 		case 1:
 			
-			//Llamar al metodo de pedidoDAO de añadir, modificar o eliminar
+			System.out.println("¿Que quieres insertar?");
+			System.out.println("1-Pedidos");
+			System.out.println("2-Clientes");
+			System.out.println("3-Articulos");
 			
-			System.out.println("Has elegido pedidos, ¿Qué quieres hacer?");
+			Scanner teclado2 = new Scanner(System.in);
+			int opcion2 = teclado2.nextInt();
 			
-			
-			
+			switch (opcion2) {
+				case 1:
+					
+					PedidoDAO.InsertarPedido(entityManager);
+				
+					break;
+				
+				case 2:
+					
+					ClienteDAO.InsertarCliente();					
+				
+					break;
+				
+				case 3:
+					
+					ArticuloDAO.InsertarArticulo();
+				
+					break;
+
+				default:
+					break;
+			}
 			
 			break;
 			
 		case 2:
 			
-			//Llamar al metodo de clientesDAO de añadir, modificar o eliminar
+			/*
+			System.out.println("¿Que quieres listar?");
+			System.out.println("1-Pedidos");
+			System.out.println("2-Clientes");
+			System.out.println("3-Articulos"); 
+			
+			Scanner teclado3 = new Scanner(System.in);
+			int opcion3 = teclado3.nextInt();
+			
+			switch (opcion3) {
+				case 1:
+					
+					PedidoDAO.
+				
+					break;
+				
+				case 2:
+					
+					ClienteDAO.				
+				
+					break;
+				
+				case 3:
+					
+					ArticuloDAO.
+				
+					break;
+
+				default:
+					break;
+			}*/
 			
 		case 3:
 			
-			//Llamar al metodo de ArticulosDAO de añadir, modificar o eliminar
+			/*
+			System.out.println("¿Que quieres eliminar?");
+			System.out.println("1-Pedidos");
+			System.out.println("2-Clientes");
+			System.out.println("3-Articulos");
+			
+			Scanner teclado4 = new Scanner(System.in);
+			int opcion4 = teclado4.nextInt();
+			
+			switch (opcion4) {
+				case 1:
+					
+					PedidoDAO.
+				
+					break;
+				
+				case 2:
+					
+					ClienteDAO.					
+				
+					break;
+				
+				case 3:
+					
+					ArticuloDAO.
+				
+					break;
+
+				default:
+					break;
+			}*/
+			
 			
 			
 			break;	

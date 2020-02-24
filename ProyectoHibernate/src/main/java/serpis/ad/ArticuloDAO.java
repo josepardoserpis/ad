@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 public class ArticuloDAO {
 	
-	private void psv() {
+	public static void InsertarArticulo() {
 		// TODO Auto-generated method stub
 		
 		Articulo articulo = new Articulo();
@@ -25,6 +25,14 @@ public class ArticuloDAO {
 		entityManagerFactory.close();
 		
 
+	}
+	
+	public static void ListarArticulo(EntityManager entityManager) {
+		
+	}
+	
+	public static void EliminarArticulo (EntityManager entityManager) {
+		
 	}
 
 }
