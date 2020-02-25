@@ -26,5 +26,16 @@ public class ClienteDAO {
 		
 		
 	}
+	public static void ListarCliente(EntityManager entityManager) {
+		
+		List<Cliente>clientes = entityManager.createQuery("from articulo order by id", Cliente.class).getResultList();
+		
+		for (Cliente cliente : clientes)
+    		System.out.printf("%3d %s \n" , cliente.getId(),cliente.getNombre()); 
+	}
+	
+	public static void EliminarCliente (EntityManager entityManager) {
+		
+	}
 
 }

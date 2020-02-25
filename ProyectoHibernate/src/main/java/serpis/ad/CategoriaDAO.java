@@ -25,5 +25,16 @@ public class CategoriaDAO {
 		
 		
 	}
+	public static void ListarCategoria(EntityManager entityManager) {
+		
+		List<Categoria>categorias = entityManager.createQuery("from articulo order by id", Categoria.class).getResultList();
+		
+		for (Categoria categoria : categorias)
+			System.out.printf("%3d %s \n" ,categoria.getId(),categoria.getNombre()); 
+	}
+	
+	public static void EliminarCategoria (EntityManager entityManager) {
+		
+	}
 
 }

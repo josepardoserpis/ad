@@ -35,8 +35,11 @@ public class PedidoDAO {
 	
 	public static void ListarPedido (EntityManager entityManager) {
 		
+		List<Pedido>pedidos= entityManager.createQuery("from Pedido order by id", Pedido.class).getResultList();
+		
+		for (Pedido pedido : pedidos)
+			System.out.printf("%d  %s  %s %n",pedido.getCliente(),pedido.getFecha(),pedido.getId(),pedido.getImporte());
 	}
-	
 	public static void EliminarPedido (EntityManager entityManager) {
 		
 	}

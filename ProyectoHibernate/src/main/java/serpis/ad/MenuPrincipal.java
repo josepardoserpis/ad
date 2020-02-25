@@ -20,120 +20,127 @@ public class MenuPrincipal {
 		System.out.println("3-Eliminar");
 		
 		Scanner teclado = new Scanner(System.in);
-		int opcion= teclado.nextInt();
+		int opcion= -1;
 		
-		
-		switch (opcion) {
-		case 1:
+		while (opcion != 0){
 			
-			System.out.println("¿Que quieres insertar?");
-			System.out.println("1-Pedidos");
-			System.out.println("2-Clientes");
-			System.out.println("3-Articulos");
-			
-			Scanner teclado2 = new Scanner(System.in);
-			int opcion2 = teclado2.nextInt();
-			
-			switch (opcion2) {
-				case 1:
-					
-					PedidoDAO.InsertarPedido(entityManager);
-				
-					break;
-				
-				case 2:
-					
-					ClienteDAO.InsertarCliente();					
-				
-					break;
-				
-				case 3:
-					
-					ArticuloDAO.InsertarArticulo();
-				
-					break;
-
-				default:
-					break;
+			opcion = teclado.nextInt();
+			if (opcion == 0) {
+				break;
 			}
-			
-			break;
-			
-		case 2:
-			
-			/*
-			System.out.println("¿Que quieres listar?");
-			System.out.println("1-Pedidos");
-			System.out.println("2-Clientes");
-			System.out.println("3-Articulos"); 
-			
-			Scanner teclado3 = new Scanner(System.in);
-			int opcion3 = teclado3.nextInt();
-			
-			switch (opcion3) {
-				case 1:
+			switch (opcion) {
+			case 1:
+				
+				System.out.println("¿Que quieres insertar?");
+				System.out.println("1-Pedidos");
+				System.out.println("2-Clientes");
+				System.out.println("3-Articulos");
+				
+				Scanner teclado2 = new Scanner(System.in);
+				int opcion2 = teclado2.nextInt();
+				
+				switch (opcion2) {
+					case 1:
+						
+						PedidoDAO.InsertarPedido(entityManager);
 					
-					PedidoDAO.
-				
-					break;
-				
-				case 2:
+						break;
 					
-					ClienteDAO.				
-				
-					break;
-				
-				case 3:
+					case 2:
+						
+						ClienteDAO.InsertarCliente();					
 					
-					ArticuloDAO.
-				
-					break;
+						break;
+					
+					case 3:
+						
+						ArticuloDAO.InsertarArticulo();
+					
+						break;
 
-				default:
-					break;
-			}*/
-			
-		case 3:
-			
-			/*
-			System.out.println("¿Que quieres eliminar?");
-			System.out.println("1-Pedidos");
-			System.out.println("2-Clientes");
-			System.out.println("3-Articulos");
-			
-			Scanner teclado4 = new Scanner(System.in);
-			int opcion4 = teclado4.nextInt();
-			
-			switch (opcion4) {
-				case 1:
+					default:
+						break;
+				}
+				
+				break;
+				
+			case 2:
+				
+				
+				System.out.println("¿Que quieres listar?");
+				System.out.println("1-Pedidos");
+				System.out.println("2-Clientes");
+				System.out.println("3-Articulos"); 
+				
+				Scanner teclado3 = new Scanner(System.in);
+				int opcion3 = teclado3.nextInt();
+				
+				switch (opcion3) {
+					case 1:
+						
+						PedidoDAO.ListarPedido(entityManager);
 					
-					PedidoDAO.
-				
-					break;
-				
-				case 2:
+						break;
 					
-					ClienteDAO.					
-				
-					break;
-				
-				case 3:
+					case 2:
+						
+						ClienteDAO.ListarCliente(entityManager);	
 					
-					ArticuloDAO.
-				
-					break;
+						break;
+					
+					case 3:
+						
+						ArticuloDAO.ListarArticulo(entityManager);
+					
+						break;
 
-				default:
-					break;
-			}*/
-			
-			
-			
-			break;	
+					default:
+						break;
+				}
+				
+			case 3:
+				
+				
+				System.out.println("¿Que quieres eliminar?");
+				System.out.println("1-Pedidos");
+				System.out.println("2-Clientes");
+				System.out.println("3-Articulos");
+				
+				Scanner teclado4 = new Scanner(System.in);
+				int opcion4 = teclado4.nextInt();
+				
+				switch (opcion4) {
+					case 1:
+						
+						PedidoDAO.EliminarPedido(entityManager);
+					
+						break;
+					
+					case 2:
+						
+						ClienteDAO.	EliminarCliente(entityManager);				
+					
+						break;
+					
+					case 3:
+						
+						ArticuloDAO.EliminarArticulo(entityManager);
+					
+						break;
 
-		default:
-			break;
+					default:
+						break;
+				}
+				
+				
+				
+				break;	
+
+			default:
+				break;
+			}
 		}
+
 
 	}
 

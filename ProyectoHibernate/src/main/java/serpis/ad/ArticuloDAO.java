@@ -1,5 +1,7 @@
 package serpis.ad;
 
+
+
 import java.util.*;
 import javax.persistence.*;
 
@@ -29,6 +31,10 @@ public class ArticuloDAO {
 	
 	public static void ListarArticulo(EntityManager entityManager) {
 		
+		List<Articulo>articulos = entityManager.createQuery("from articulo order by id", Articulo.class).getResultList();
+		
+		for (Articulo articulo : articulos)
+    		System.out.printf("%4d %s \n" , articulo.getId(),articulo.getCategoria(),articulo.getNombre(),articulo.getPrecio()); 
 	}
 	
 	public static void EliminarArticulo (EntityManager entityManager) {
