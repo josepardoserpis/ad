@@ -19,9 +19,9 @@ public class PedidoLinea {
 	@JoinColumn(name = "articulo")
 	
 	private Articulo articulo;
-	private BigDecimal precio = BigDecimal.ZERO;
-	private BigDecimal unidades = BigDecimal.ZERO;
-	private BigDecimal importe = BigDecimal.ZERO;
+	private double precio;
+	private int unidades;
+	private double importe;
 	
 	private PedidoLinea() {}
 	
@@ -54,29 +54,31 @@ public class PedidoLinea {
 		this.articulo = articulo;
 	}
 
-	public BigDecimal getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(BigDecimal precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 
-	public BigDecimal getUnidades() {
+	public int getUnidades() {
 		return unidades;
 	}
 
-	public void setUnidades(BigDecimal unidades) {
+	public void setUnidades(int unidades) {
 		this.unidades = unidades;
 	}
 
-	public BigDecimal getImporte() {
+	public double getImporte() {
 		return importe;
 	}
 
-	public void setImporte(BigDecimal importe) {
+	public void setImporte(double importe) {
 		this.importe = importe;
 	}
+
+
 	
 	
 

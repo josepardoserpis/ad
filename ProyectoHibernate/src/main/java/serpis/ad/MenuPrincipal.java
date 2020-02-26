@@ -11,18 +11,21 @@ public class MenuPrincipal {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("serpis.ad.proyectohibernate");
 		
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		entityManager.getTransaction().begin();
 		
-		System.out.println("Escoge una opción: ");
+
 		
-		System.out.println("1-Insertar");
-		System.out.println("2-Listar");
-		System.out.println("3-Eliminar");
-		
+
+
 		Scanner teclado = new Scanner(System.in);
 		int opcion= -1;
 		
 		while (opcion != 0){
+			System.out.println("-----------------------------------------------");
+			System.out.println("Escoge una opción: ");
+			System.out.println("1-Insertar");
+			System.out.println("2-Listar");
+			System.out.println("3-Eliminar");
+			System.out.println("0- SALIR ");
 			
 			opcion = teclado.nextInt();
 			if (opcion == 0) {
@@ -36,6 +39,7 @@ public class MenuPrincipal {
 				System.out.println("2-Clientes");
 				System.out.println("3-Articulos");
 				
+				
 				Scanner teclado2 = new Scanner(System.in);
 				int opcion2 = teclado2.nextInt();
 				
@@ -48,13 +52,13 @@ public class MenuPrincipal {
 					
 					case 2:
 						
-						ClienteDAO.InsertarCliente();					
+						ClienteDAO.InsertarCliente(entityManager);					
 					
 						break;
 					
 					case 3:
 						
-						ArticuloDAO.InsertarArticulo();
+						ArticuloDAO.InsertarArticulo(entityManager);
 					
 						break;
 
@@ -96,7 +100,11 @@ public class MenuPrincipal {
 
 					default:
 						break;
+						
 				}
+				
+				break;
+				
 				
 			case 3:
 				
@@ -134,7 +142,7 @@ public class MenuPrincipal {
 				
 				
 				
-				break;	
+					
 
 			default:
 				break;

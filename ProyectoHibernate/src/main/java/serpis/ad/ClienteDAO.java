@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 public class ClienteDAO {
 	
-	public static void InsertarCliente () {
+	public static void InsertarCliente (EntityManager entityManager) {
 		
 		Cliente cliente = new Cliente ();
 		System.out.println("Nombre del cliente: ");
@@ -15,26 +15,36 @@ public class ClienteDAO {
 		
 		cliente.setNombre(nombre);
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("serpis.ad.proyectohibernate");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
 		entityManager.getTransaction().begin();
 		entityManager.persist(cliente);
 		entityManager.getTransaction().commit();
 		entityManager.close();
-		entityManagerFactory.close();
+
 		
 		
 		
 	}
 	public static void ListarCliente(EntityManager entityManager) {
 		
-		List<Cliente>clientes = entityManager.createQuery("from articulo order by id", Cliente.class).getResultList();
-		
+		List<Cliente>clientes = entityManager.createQuery("from Cliente order by id", Cliente.class).getResultList();
+		System.out.println();
 		for (Cliente cliente : clientes)
     		System.out.printf("%3d %s \n" , cliente.getId(),cliente.getNombre()); 
 	}
 	
 	public static void EliminarCliente (EntityManager entityManager) {
+		
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Dime la id del cliente a eliminar:");
+		Long idcliente = teclado.nextLong();
+		
+		Cliente recogeCliente = entityManager.find(Cliente.class, idcliente);
+		
+		entityManager.getTransaction().begin();
+		entityManager.remove(recogeCliente);
+		entityManager.getTransaction().commit();
+		entityManager.close();
 		
 	}
 

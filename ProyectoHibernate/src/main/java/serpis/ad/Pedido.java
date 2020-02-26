@@ -13,7 +13,7 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private LocalDateTime fecha = LocalDateTime.now();
-	private BigDecimal importe = BigDecimal.ZERO;
+	private double importe;
 	
 	@ManyToOne
 	@JoinColumn(name="cliente")
@@ -44,12 +44,12 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
-	public BigDecimal getImporte() {
+	public double getImporte() {
 		return importe;
 	}
 
-	public void setImporte(BigDecimal importe) {
-		this.importe = importe;
+	public void setImporte(double d) {
+		this.importe = d;
 	}
 
 	public Cliente getCliente() {
@@ -67,6 +67,12 @@ public class Pedido {
 	public void setPedidoLineas(List<PedidoLinea> pedidoLineas) {
 		this.pedidoLineas = pedidoLineas;
 	}
+	@Override
+	public String toString() {
+		return " Pedido [ id=" + id + ", fecha=" + fecha + ", importe=" + importe + "]";
+	}
+	
+	
 	
 	
 	

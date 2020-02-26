@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 public class CategoriaDAO {
 	
-	public static void InsertarCategoria() {
+	public static void InsertarCategoria(EntityManager entityManager) {
 		
 		Categoria categoria = new Categoria();
 		
@@ -15,25 +15,35 @@ public class CategoriaDAO {
 		
 		categoria.setNombre(nombre);
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("serpis.ad.proyectohibernate");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+
 		entityManager.getTransaction().begin();
 		entityManager.persist(categoria);
 		entityManager.getTransaction().commit();
 		entityManager.close();
-		entityManagerFactory.close();
+
 		
 		
 	}
 	public static void ListarCategoria(EntityManager entityManager) {
 		
 		List<Categoria>categorias = entityManager.createQuery("from articulo order by id", Categoria.class).getResultList();
-		
+		System.out.println();
 		for (Categoria categoria : categorias)
 			System.out.printf("%3d %s \n" ,categoria.getId(),categoria.getNombre()); 
 	}
 	
 	public static void EliminarCategoria (EntityManager entityManager) {
+		
+		Scanner teclado = new Scanner(System.in);
+		Long idcategoria = teclado.nextLong();
+		
+		Categoria recogeCategoria = entityManager.find(Categoria.class, idcategoria);
+		
+		entityManager.getTransaction().begin();
+		entityManager.remove(recogeCategoria);
+		entityManager.getTransaction().commit();
+		entityManager.close();
 		
 	}
 

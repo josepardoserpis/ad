@@ -48,6 +48,11 @@ public class Articulo {
 	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}
+
+	@Override
+	public String toString() {
+		return "Articulo [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", categoria=" + categoria + "]";
+	}
 	
 
 }
