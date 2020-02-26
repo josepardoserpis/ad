@@ -50,8 +50,6 @@ public class PedidoDAO {
 		for (Pedido pedido : pedidos)
 			System.out.println(pedido.toString());
 		
-		entityManager.getTransaction().begin();
-		entityManager.close();
 		
 	}
 	
