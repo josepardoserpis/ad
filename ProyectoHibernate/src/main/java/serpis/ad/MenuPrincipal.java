@@ -25,7 +25,6 @@ public class MenuPrincipal {
 			System.out.println("1-Insertar");
 			System.out.println("2-Listar");
 			System.out.println("3-Eliminar");
-			System.out.println("4-Categorias");
 			System.out.println("0- SALIR ");
 			
 			opcion = teclado.nextInt();
