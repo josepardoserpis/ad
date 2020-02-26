@@ -19,7 +19,7 @@ public class ClienteDAO {
 		entityManager.getTransaction().begin();
 		entityManager.persist(cliente);
 		entityManager.getTransaction().commit();
-		entityManager.close();
+
 
 		
 		

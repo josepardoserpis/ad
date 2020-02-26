@@ -25,6 +25,7 @@ public class MenuPrincipal {
 			System.out.println("1-Insertar");
 			System.out.println("2-Listar");
 			System.out.println("3-Eliminar");
+			System.out.println("4-Categorias");
 			System.out.println("0- SALIR ");
 			
 			opcion = teclado.nextInt();
@@ -38,6 +39,7 @@ public class MenuPrincipal {
 				System.out.println("1-Pedidos");
 				System.out.println("2-Clientes");
 				System.out.println("3-Articulos");
+				System.out.println("4-Categorias");
 				
 				
 				Scanner teclado2 = new Scanner(System.in);
@@ -61,6 +63,12 @@ public class MenuPrincipal {
 						ArticuloDAO.InsertarArticulo(entityManager);
 					
 						break;
+					case 4:
+						
+						CategoriaDAO.InsertarCategoria(entityManager);
+						
+						break;
+						
 
 					default:
 						break;
@@ -75,6 +83,7 @@ public class MenuPrincipal {
 				System.out.println("1-Pedidos");
 				System.out.println("2-Clientes");
 				System.out.println("3-Articulos"); 
+				System.out.println("4-Categorias");
 				
 				Scanner teclado3 = new Scanner(System.in);
 				int opcion3 = teclado3.nextInt();
@@ -97,6 +106,11 @@ public class MenuPrincipal {
 						ArticuloDAO.ListarArticulo(entityManager);
 					
 						break;
+					case 4:
+						
+						CategoriaDAO.ListarCategoria(entityManager);
+						
+						break;
 
 					default:
 						break;
@@ -113,6 +127,7 @@ public class MenuPrincipal {
 				System.out.println("1-Pedidos");
 				System.out.println("2-Clientes");
 				System.out.println("3-Articulos");
+				System.out.println("4-Categorias");
 				
 				Scanner teclado4 = new Scanner(System.in);
 				int opcion4 = teclado4.nextInt();
@@ -134,6 +149,11 @@ public class MenuPrincipal {
 						
 						ArticuloDAO.EliminarArticulo(entityManager);
 					
+						break;
+					case 4:
+						
+						CategoriaDAO.EliminarCategoria(entityManager);
+						
 						break;
 
 					default:

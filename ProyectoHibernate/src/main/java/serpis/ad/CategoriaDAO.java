@@ -20,14 +20,14 @@ public class CategoriaDAO {
 		entityManager.getTransaction().begin();
 		entityManager.persist(categoria);
 		entityManager.getTransaction().commit();
-		entityManager.close();
+
 
 		
 		
 	}
 	public static void ListarCategoria(EntityManager entityManager) {
 		
-		List<Categoria>categorias = entityManager.createQuery("from articulo order by id", Categoria.class).getResultList();
+		List<Categoria>categorias = entityManager.createQuery("from Categoria order by id", Categoria.class).getResultList();
 		System.out.println();
 		for (Categoria categoria : categorias)
 			System.out.printf("%3d %s \n" ,categoria.getId(),categoria.getNombre()); 

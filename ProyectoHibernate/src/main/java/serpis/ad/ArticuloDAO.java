@@ -38,7 +38,7 @@ public class ArticuloDAO {
 		entityManager.getTransaction().begin();
 		entityManager.persist(articulo);
 		entityManager.getTransaction().commit();
-		entityManager.close();
+
 
 
 		
